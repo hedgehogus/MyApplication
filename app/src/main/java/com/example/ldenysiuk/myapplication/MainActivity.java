@@ -38,6 +38,18 @@ public class MainActivity extends AppCompatActivity {
 
         mManager = (WifiP2pManager) getSystemService(Context.WIFI_P2P_SERVICE);
         mChannel = mManager.initialize(this, getMainLooper(), null);
+
+        mManager.discoverPeers(mChannel, new WifiP2pManager.ActionListener() {
+            @Override
+            public void onSuccess() {
+                
+            }
+
+            @Override
+            public void onFailure(int reason) {
+
+            }
+        });
     }
 
     @Override
